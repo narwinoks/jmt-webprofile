@@ -1,4 +1,5 @@
 @extends('templates.public.main')
+@section('title', 'Hardware - Jasamedika Transmedic')
 @section('content')
     <section class="section-banner parallax-banner-hardware">
         <div class="container">

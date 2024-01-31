@@ -90,7 +90,7 @@
                     </div>
                     <div class="col-lg-6 col-sm-6">
                         <div class="text-right">
-                            <p>Copyright ©{{date('Y')}} Jasamedika Transmedic. All Rights Reserved.</p>
+                            <p>Copyright ©{{ date('Y') }} Jasamedika Transmedic. All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>
