@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\Admin\AuthController;
+use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,13 @@ Route::get('/', function () {
 });
 
 Route::controller(AuthController::class)->group(function () {
-    Route::get('/login', 'login')->name("login");
+    Route::get('/login', 'login')->name("login")->middleware('guest');
 
-    Route::post('/login', 'processLogin')->name("login");
+    Route::post('/login', 'authenticate')->name("authenticate")->middleware('guest');
+    Route::delete('/logout', 'logout')->name("logout")->middleware('auth');
+});
+Route::controller(DashboardController::class)->middleware('auth')->name('dashboard.')->group(function () {
+    Route::get('/dashboard', 'index')->name("index");
 });
 
 Route::get('/{pages}', [MainController::class, 'show_page'])->name("show_page");

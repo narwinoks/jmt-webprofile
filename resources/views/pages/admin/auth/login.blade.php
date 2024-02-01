@@ -14,6 +14,7 @@
     <link href="{{ asset('assets/template/css/tabler-payments.min.css?1684106062') }}" rel="stylesheet" />
     <link href="{{ asset('assets/template/css/tabler-vendors.min.css?1684106062') }}" rel="stylesheet" />
     <link href="{{ asset('assets/template/css/demo.min.css?1684106062') }}" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <style>
         @import url('https://rsms.me/inter/inter.css');
 
@@ -41,14 +42,16 @@
                     <form action="./" method="get" autocomplete="off" novalidate>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="email@email.com" autocomplete="off">
+                            <input type="email" id="email" class="form-control" placeholder="email@email.com"
+                                autocomplete="off">
+                            <span class="error-email text-danger d-none"></span>
                         </div>
                         <div class="mb-2">
                             <label class="form-label">
                                 Password
                             </label>
                             <div class="input-group input-group-flat">
-                                <input type="password" class="form-control" placeholder="Password anda"
+                                <input type="password" id="password" class="form-control" placeholder="Password anda"
                                     autocomplete="off">
                                 <span class="input-group-text">
                                     <a href="#" class="link-secondary" title="Show password"
@@ -64,17 +67,72 @@
                                     </a>
                                 </span>
                             </div>
+                            <span class="error-password text-danger d-none"></span>
                         </div>
                         <div class="form-footer">
-                            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                            <button type="button" id="button" class="btn btn-primary w-100">
+                                <div class="spinner-border d-none mx-4" role="status">
+                                </div>
+                                <span id="tag-button">
+                                    Sign in
+                                </span>
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/template/js/tabler.min.js?1684106062') }}" defer></script>
     <script src="{{ asset('assets/template/js/demo.min.js?1684106062') }}" defer></script>
+    <script src="{{ asset('assets/template/libs/bs-notify/bs-notify.min.js') }}"></script>
+    <script src="{{ asset('assets/main/validation.js') }}"></script>
+    <script src="{{ asset('assets/main/alert.js') }}"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    <script>
+        $('#button').click(function() {
+            $(this).prop('disabled', false);
+            $(this).find('.spinner-border').removeClass('d-none');
+            $(this).find('#tag-button').addClass('d-none');
+            var formData = {
+                password: $("#password").val(),
+                email: $("#email").val(),
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('authenticate') }}",
+                data: formData,
+                dataType: "json",
+                encode: true,
+                success: function(response) {
+                    showAlert(response.message, 'success')
+                    setTimeout(() => {
+                        window.location.href = response.redirect;
+                    }, 2000);
+                },
+                error: function(error) {
+                    if (error.status == 400 || error.status == 422) {
+                        printErrorMsg(error);
+                    } else {
+                        showAlert(error.responseJSON.message || 'Error', 'danger')
+                    }
+                },
+                complete: function(data) {
+                    $('#button').find('.spinner-border').addClass('d-none');
+                    $('#button').find('#tag-button').removeClass('d-none');
+                }
+            });
+        });
+    </script>
+    @include('templates.admin.alert')
 </body>
 
 </html>
