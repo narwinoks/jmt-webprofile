@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <div class="blog-entry mb-3">
                         <div class="entry-image clearfix">
-                            <img class="img-fluid" src="images/insight-apa-itu-healthcare-dan-sejarah-perkembangan.webp"
+                            <img class="img-fluid" src="assets/images/insight-apa-itu-healthcare-dan-sejarah-perkembangan.webp"
                                 alt="">
                         </div>
                         <div class="clearfix"></div>

@@ -7,7 +7,7 @@
                 <div class="col-md-8">
                     <div class="blog-entry mb-3">
                         <div class="entry-image clearfix">
-                            <img class="img-fluid" src="images/insight-big-data.jpg" alt="">
+                            <img class="img-fluid" src="assets/images/insight-big-data.jpg" alt="">
                         </div>
                         <div class="clearfix"></div>
                         <div class="blog-detail mt-3">

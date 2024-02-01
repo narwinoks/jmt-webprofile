@@ -10,13 +10,13 @@
                         <div class="owl-carousel" data-nav-dots="true" data-nav-arrow="false" data-items="1" data-sm-items="1"
                             data-lg-items="1" data-md-items="1" data-autoplay="false">
                             <div class="item">
-                                <img class="img-fluid" alt="" src="images/insight-helios.jpg">
+                                <img class="img-fluid" alt="" src="assets/images/insight-helios.jpg">
                             </div>
                             <div class="item">
                                 <div class="video-local-container">
                                     <video width="32%" height="auto" autoplay muted controls
                                         class="video-local-thumbnail">
-                                        <source src="video/insight-helios.mp4">
+                                        <source src="assets/video/insight-helios.mp4">
                                         <p class="warning">Your browser does not support HTML5 video.</p>
                                     </video>
                                 </div>

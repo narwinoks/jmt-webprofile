@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <div class="blog-entry mb-3">
                         <div class="entry-image clearfix">
-                            <img class="img-fluid" src="images/gedung-kemenkes.jpg" alt="">
+                            <img class="img-fluid" src="assets/images/gedung-kemenkes.jpg" alt="">
                         </div>
                         <div class="clearfix"></div>
                         <div class="blog-detail mt-3">
@@ -64,7 +64,7 @@
                                 <br>
                                 <ul class="list-mark-article">
                                     <li><a class="link-penghargaan"
-                                            href="images/SE_No_HK_02_01_MENKES_1030_2023_ttg_Penyelenggaraan_Rekam_Medis.pdf"
+                                            href="assets/images/SE_No_HK_02_01_MENKES_1030_2023_ttg_Penyelenggaraan_Rekam_Medis.pdf"
                                             target="_blank">Klik disini </a>untuk melihat Surat Edaran</li>
                                 </ul>
                             </div>

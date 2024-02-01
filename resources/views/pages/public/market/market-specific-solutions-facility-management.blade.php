@@ -13,7 +13,7 @@
             <div class="row valign">
                 <div class="col-md-6" data-valign-overlay="middle">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/image-default.webp">
+                        src="assets/images/image-default.webp">
                 </div>
                 <div class="col-md-6 text-left">
                     <p class="mb-2">Layanan solusi berbasis Facility Management yang berfokus pada Manajemen Furnitur,
@@ -35,7 +35,7 @@
             <div class="row valign">
                 <div class="col-md-6" data-valign-overlay="middle">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/image-default.webp">
+                        src="assets/images/image-default.webp">
                 </div>
                 <div class="col-md-6 text-left">
                     <h4 class="mb-4"><strong>Engineering, Planning, and Design (EPD)</strong></h4>
@@ -51,7 +51,7 @@
             <div class="row valign">
                 <div class="col-md-6" data-valign-overlay="middle">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/mss-th-bunihayu.webp">
+                        src="assets/images/mss-th-bunihayu.webp">
                 </div>
                 <div class="col-md-6 text-left">
                     <h4 class="mb-4"><strong>Bunihayu Forest (Eco-Edu Tourism)</strong></h4>

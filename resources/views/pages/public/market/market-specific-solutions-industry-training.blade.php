@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row valign">
                 <div class="col-md-6">
-                    <img class="img-fluid center-block bottom-m pb-10" alt="" src="images/home-our-business.webp">
+                    <img class="img-fluid center-block bottom-m pb-10" alt="" src="assets/images/home-our-business.webp">
                 </div>
                 <div class="col-md-6 text-left">
                     <h4 class="mb-4"><strong>Training</strong></h4>
@@ -37,7 +37,7 @@
             <div class="row valign">
                 <div class="col-md-6">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/mss-training-networking.webp">
+                        src="assets/images/mss-training-networking.webp">
                 </div>
                 <div class="col-md-6 text-left">
                     <h4 class="mb-4"><strong>Networking</strong></h4>
@@ -64,7 +64,7 @@
             <div class="row valign">
                 <div class="col-md-6">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/image-default.webp">
+                        src="assets/images/image-default.webp">
                 </div>
                 <div class="col-md-6">
                     <h4 class="mb-4"><strong>EC-Council</strong></h4>
@@ -97,7 +97,7 @@
             <div class="row valign">
                 <div class="col-md-6">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/mss-training-mikrotik.webp">
+                        src="assets/images/mss-training-mikrotik.webp">
                 </div>
                 <div class="col-md-6 text-left">
                     <h4 class="mb-4"><strong>MikroTik Authorized</strong></h4>
@@ -124,7 +124,7 @@
             <div class="row valign">
                 <div class="col-md-6">
                     <img class="img-fluid center-block bottom-m asset-box-shadow-img" alt=""
-                        src="images/mss-training-cyber-security.webp">
+                        src="assets/images/mss-training-cyber-security.webp">
                 </div>
                 <div class="col-md-6">
                     <h4 class="mb-4"><strong>Junior Talent (Trainee & Incubation Program)</strong></h4>
