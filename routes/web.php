@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\DataController;
 use App\Http\Controllers\Web\Admin\InsightController;
 use App\Http\Controllers\Web\Admin\MenuController;
+use App\Http\Controllers\Web\Admin\PartnerController;
 use App\Http\Controllers\Web\Admin\ProductController;
 use App\Http\Controllers\Web\MainController;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,11 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::get('/edit', 'edit')->name("edit");
     });
     Route::controller(ProductController::class)->middleware('auth')->prefix('products/')->name('products.')->group(function () {
+        Route::get('/', 'index')->name("index");
+        Route::get('create', 'create')->name("create");
+        Route::get('/edit', 'edit')->name("edit");
+    });
+    Route::controller(PartnerController::class)->middleware('auth')->prefix('partner/')->name('partner.')->group(function () {
         Route::get('/', 'index')->name("index");
         Route::get('create', 'create')->name("create");
         Route::get('/edit', 'edit')->name("edit");

@@ -46,3 +46,7 @@ Breadcrumbs::for('admin.contents.edit', function ($trail, $author) {
     $trail->parent('admin.contents.index');
     $trail->push('Update', route('admin.contents.edit', $author));
 });
+Breadcrumbs::for('admin.partner.index', function ($trail) {
+    $trail->parent('admin.dashboard.index');
+    $trail->push('Partner', route('admin.partner.index'));
+});
