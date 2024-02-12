@@ -117,8 +117,8 @@
              <div class="navbar">
                  <div class="container-xl">
                      <ul class="navbar-nav">
-                         <li class="nav-item active">
-                             <a class="nav-link" href="./">
+                         <li class="nav-item ">
+                             <a class="nav-link" href="{{ route('admin.dashboard.index') }}">
                                  <span
                                      class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
@@ -136,7 +136,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="#">
+                             <a class="nav-link" href="{{ route('admin.insight.index') }}">
                                  <span
                                      class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
                                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
@@ -152,6 +152,43 @@
                                  </span>
                                  <span class="nav-link-title">
                                      Insight
+                                 </span>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="{{ route('admin.contact.index') }}">
+                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                     <svg xmlns="http://www.w3.org/2000/svg"
+                                         class="icon icon-tabler icon-tabler-phone" width="24" height="24"
+                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                         <path
+                                             d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                                     </svg>
+                                 </span>
+                                 <span class="nav-link-title">
+                                     Contact
+                                 </span>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="{{ route('admin.products.index') }}">
+                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                     <svg xmlns="http://www.w3.org/2000/svg"
+                                         class="icon icon-tabler icon-tabler-devices-plus" width="24"
+                                         height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                         <path d="M13 16.5v-7.5a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v3.5" />
+                                         <path d="M18 8v-3a1 1 0 0 0 -1 -1h-13a1 1 0 0 0 -1 1v12a1 1 0 0 0 1 1h8" />
+                                         <path d="M16 9h2" />
+                                         <path d="M16 19h6" />
+                                         <path d="M19 16v6" />
+                                     </svg>
+                                 </span>
+                                 <span class="nav-link-title">
+                                     Products & Services
                                  </span>
                              </a>
                          </li>
@@ -177,11 +214,10 @@
                                  </span>
                              </a>
                              <div class="dropdown-menu">
-                                 <a class="dropdown-item" href="https://tabler.io/docs" target="_blank"
-                                     rel="noopener">
+                                 <a class="dropdown-item" href="{{ route('admin.insight.index') }}" rel="noopener">
                                      Tambah
                                  </a>
-                                 <a class="dropdown-item" href="./changelog.html">
+                                 <a class="dropdown-item" href="{{ route('admin.menu.index') }}">
                                      List
                                  </a>
                              </div>

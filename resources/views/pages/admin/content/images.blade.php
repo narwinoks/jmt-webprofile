@@ -6,7 +6,6 @@
                 </iframe>
                 <div class="image-buttons">
                     <a class="btn btn-danger delete-image" data-id="{{ $image->id }}">Delete</a>
-                    <a class="btn btn-success set-thumbnail" data-id="{{ $image->id }}">Set Thumbnail</a>
                 </div>
             </div>
         </div>
@@ -20,7 +19,6 @@
             </div>
             <div class="image-buttons">
                 <a class="btn btn-danger delete-image" data-id="{{ $image->id }}">Delete</a>
-                <a class="btn btn-success set-thumbnail" data-id="{{ $image->id }}">Set Thumbnail</a>
             </div>
         </div>
     @else
@@ -29,7 +27,6 @@
                 <img src="{{ asset('assets/images/' . $image->url) }}" alt="{{ $image->url }}">
                 <div class="image-buttons">
                     <a class="btn btn-danger delete-image" data-id="{{ $image->id }}">Delete</a>
-                    <a class="btn btn-success set-thumbnail" data-id="{{ $image->id }}">Set Thumbnail</a>
                 </div>
             </div>
         </div>

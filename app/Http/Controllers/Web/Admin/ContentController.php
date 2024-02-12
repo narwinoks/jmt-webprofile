@@ -138,7 +138,7 @@ class ContentController extends Controller
                     Media::create($media);
                 } elseif ($type == ImageStatus::image) {
                     $images = $request->images;
-                    if (count($images) > 0) {
+                    if ($images && count($images) > 0) {
                         foreach ($images as $key => $image) {
                             $imageName = Str::slug($content->title) . '-' . Str::random(5) . '.' . $image->extension();
                             $image->move(public_path('assets/images'), $imageName);

@@ -30,3 +30,7 @@ Breadcrumbs::for('admin.contact.index', function ($trail) {
     $trail->parent('admin.dashboard.index');
     $trail->push('Contact', route('admin.contact.index'));
 });
+Breadcrumbs::for('admin.products.index', function ($trail) {
+    $trail->parent('admin.dashboard.index');
+    $trail->push('Products', route('admin.products.index'));
+});

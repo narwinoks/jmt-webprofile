@@ -14,14 +14,19 @@ class ContentCategorySeeder extends Seeder
      */
     public function run()
     {
-        $model =  new ContentCategory();
-        $model->category = 'insight';
-        $model->type = 'insight';
-        $model->save();
+        // $model =  new ContentCategory();
+        // $model->category = 'insight';
+        // $model->type = 'insight';
+        // $model->save();
+
+        // $model =  new ContentCategory();
+        // $model->category = 'contact-us';
+        // $model->type = 'contact-us';
+        // $model->save();
 
         $model =  new ContentCategory();
-        $model->category = 'contact-us';
-        $model->type = 'contact-us';
+        $model->category = 'products';
+        $model->type = 'products';
         $model->save();
     }
 }
