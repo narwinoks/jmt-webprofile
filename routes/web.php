@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Web\Admin\AuthController;
+use App\Http\Controllers\Web\Admin\ContentController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\DataController;
+use App\Http\Controllers\Web\Admin\InsightController;
 use App\Http\Controllers\Web\Admin\MenuController;
 use App\Http\Controllers\Web\MainController;
 use Illuminate\Support\Facades\Route;
@@ -40,8 +42,23 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::post('/', 'store')->name("store");
         Route::delete('/', 'destroy')->name("destroy");
     });
+    Route::controller(InsightController::class)->middleware('auth')->prefix('insight/')->name('insight.')->group(function () {
+        Route::get('/', 'index')->name("index");
+        Route::get('create', 'create')->name("create");
+        Route::get('/edit/{id}', 'edit')->name("edit");
+    });
+    Route::controller(ContentController::class)->middleware('auth')->prefix('content/')->name('content.')->group(function () {
+        Route::get('/images', 'images')->name('images');
+
+        Route::post('/', 'store')->name("store");
+        Route::post('/set-thumbnail', 'setThumbnail')->name("setThumbnail");
+        Route::post('/update', 'update')->name("update");
+        Route::delete('/', 'destroy')->name("destroy");
+        Route::delete('/delete-image', 'deleteImage')->name("deleteImage");
+    });
     Route::controller(DataController::class)->middleware('auth')->prefix('data/')->name('data.')->group(function () {
         Route::get('/menu', 'menu')->name("menu");
+        Route::get('/content', 'content')->name("content");
     });
 });
 

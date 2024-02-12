@@ -72,4 +72,8 @@
     .dismiss-hidden [data-notify="dismiss"] {
         display: none !important;
     }
+
+    .alert button {
+        display: none !important;
+    }
 </style>
