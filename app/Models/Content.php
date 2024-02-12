@@ -14,7 +14,7 @@ class Content extends Model
 
     public function category()
     {
-        return $this->belongsTo(ContentCategory::class);
+        return $this->belongsTo(ContentCategory::class, 'content_category_id', 'id');
     }
     public function media()
     {

@@ -23,7 +23,7 @@ class DataController extends Controller
     {
         $category = $request->category;
         $type = $request->type;
-        $data = Content::with(['category', 'category.type'])
+        $data = Content::with(['category', 'media'])
             ->where('status_enabled', true)
             ->when($category, function ($query) use ($category) {
                 return $query->whereHas('category', function ($subquery) use ($category) {
@@ -31,8 +31,8 @@ class DataController extends Controller
                 });
             })
             ->when($type, function ($query) use ($type) {
-                return $query->whereHas('category.type', function ($subquery) use ($type) {
-                    $subquery->where('name', $type);
+                return $query->whereHas('category', function ($subquery) use ($type) {
+                    $subquery->where('type', $type);
                 });
             })
             ->get();

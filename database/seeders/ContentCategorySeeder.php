@@ -18,5 +18,10 @@ class ContentCategorySeeder extends Seeder
         $model->category = 'insight';
         $model->type = 'insight';
         $model->save();
+
+        $model =  new ContentCategory();
+        $model->category = 'contact-us';
+        $model->type = 'contact-us';
+        $model->save();
     }
 }

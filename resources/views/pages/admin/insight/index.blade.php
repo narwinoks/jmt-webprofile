@@ -39,11 +39,13 @@
         var table = $("#table-content").DataTable({
             processing: true,
             serverSide: true,
-            data: {
-                category: 'insight',
-                action: 'path-to-file-action'
+            ajax: {
+                url: "{{ route('admin.data.content') }}",
+                type: "GET",
+                data: {
+                    type: 'insight'
+                },
             },
-            ajax: "{{ route('admin.data.content') }}",
             columns: [{
                     data: "DT_RowIndex",
                     orderable: false,

@@ -25,3 +25,8 @@ Breadcrumbs::for('admin.insight.edit', function ($trail, $model) {
     $trail->parent('admin.insight.index');
     $trail->push('Edit', route('admin.insight.edit', $model));
 });
+
+Breadcrumbs::for('admin.contact.index', function ($trail) {
+    $trail->parent('admin.dashboard.index');
+    $trail->push('Contact', route('admin.contact.index'));
+});

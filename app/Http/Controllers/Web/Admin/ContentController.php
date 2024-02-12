@@ -23,6 +23,9 @@ class ContentController extends Controller
     use Valet;
     public function store(Request $request)
     {
+        if ($request->id) {
+            return  $this->update($request);
+        }
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'content' => 'required|min:2',
@@ -69,6 +72,13 @@ class ContentController extends Controller
                 $media = [
                     'type' => ImageStatus::video,
                     'url' => $videoName,
+                    'content_id' => $content->id
+                ];
+                Media::create($media);
+            } else if ($type == ImageStatus::icon) {
+                $media = [
+                    'type' => ImageStatus::icon,
+                    'url' => $request->media,
                     'content_id' => $content->id
                 ];
                 Media::create($media);
@@ -146,6 +156,13 @@ class ContentController extends Controller
                     $media = [
                         'type' => ImageStatus::video,
                         'url' => $videoName,
+                        'content_id' => $content->id
+                    ];
+                    Media::create($media);
+                } else if ($type == ImageStatus::icon) {
+                    $media = [
+                        'type' => ImageStatus::icon,
+                        'url' => $request->media,
                         'content_id' => $content->id
                     ];
                     Media::create($media);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\Admin\AuthController;
+use App\Http\Controllers\Web\Admin\ContactUsController;
 use App\Http\Controllers\Web\Admin\ContentController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\DataController;
@@ -46,6 +47,11 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::get('/', 'index')->name("index");
         Route::get('create', 'create')->name("create");
         Route::get('/edit/{id}', 'edit')->name("edit");
+    });
+    Route::controller(ContactUsController::class)->middleware('auth')->prefix('contact/')->name('contact.')->group(function () {
+        Route::get('/', 'index')->name("index");
+        Route::get('create', 'create')->name("create");
+        Route::get('/edit', 'edit')->name("edit");
     });
     Route::controller(ContentController::class)->middleware('auth')->prefix('content/')->name('content.')->group(function () {
         Route::get('/images', 'images')->name('images');
