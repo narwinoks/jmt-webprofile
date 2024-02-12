@@ -36,7 +36,7 @@ class AuthController extends Controller
             ];
             $data = [
                 'user' => Auth::user(),
-                'redirect' => route('dashboard.index')
+                'redirect' => route('admin.dashboard.index')
             ];
             return $this->success($message, $data, 200);
         }

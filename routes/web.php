@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Web\Admin\AuthController;
 use App\Http\Controllers\Web\Admin\DashboardController;
+use App\Http\Controllers\Web\Admin\DataController;
+use App\Http\Controllers\Web\Admin\MenuController;
 use App\Http\Controllers\Web\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,8 +28,21 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'authenticate')->name("authenticate")->middleware('guest');
     Route::delete('/logout', 'logout')->name("logout")->middleware('auth');
 });
-Route::controller(DashboardController::class)->middleware('auth')->name('dashboard.')->group(function () {
-    Route::get('/dashboard', 'index')->name("index");
+Route::prefix('admin/')->name('admin.')->group(function () {
+    Route::controller(DashboardController::class)->middleware('auth')->name('dashboard.')->group(function () {
+        Route::get('/dashboard', 'index')->name("index");
+    });
+    Route::controller(MenuController::class)->middleware('auth')->prefix('menu/')->name('menu.')->group(function () {
+        Route::get('/', 'index')->name("index");
+        Route::get('create', 'create')->name("create");
+        Route::get('/edit', 'edit')->name("edit");
+
+        Route::post('/', 'store')->name("store");
+        Route::delete('/', 'destroy')->name("destroy");
+    });
+    Route::controller(DataController::class)->middleware('auth')->prefix('data/')->name('data.')->group(function () {
+        Route::get('/menu', 'menu')->name("menu");
+    });
 });
 
 Route::get('/{pages}', [MainController::class, 'show_page'])->name("show_page");

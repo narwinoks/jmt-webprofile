@@ -5,7 +5,7 @@
     <title>Admin JMT GROUP</title>
     <!-- CSS files -->
     <link href="{{ asset('assets/template/css/tabler.min.css?1684106062') }}" rel="stylesheet" />
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}" />
     <link href="{{ asset('assets/template/css/tabler-flags.min.css?1684106062') }}" rel="stylesheet" />
     <link href="{{ asset('assets/template/css/tabler-payments.min.css?1684106062') }}" rel="stylesheet" />
     <link href="{{ asset('assets/template/css/tabler-vendors.min.css?1684106062') }}" rel="stylesheet" />
@@ -21,4 +21,5 @@
             font-feature-settings: "cv03", "cv04", "cv11";
         }
     </style>
+    @stack('styles')
 </head>

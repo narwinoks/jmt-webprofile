@@ -68,3 +68,8 @@
         });
     @endif
 </script>
+<style>
+    .dismiss-hidden [data-notify="dismiss"] {
+        display: none !important;
+    }
+</style>
