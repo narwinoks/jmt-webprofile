@@ -3,6 +3,7 @@
 use App\Http\Controllers\Web\Admin\AuthController;
 use App\Http\Controllers\Web\Admin\ContactUsController;
 use App\Http\Controllers\Web\Admin\ContentController;
+use App\Http\Controllers\Web\Admin\ContentCtrl;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\DataController;
 use App\Http\Controllers\Web\Admin\InsightController;
@@ -59,10 +60,17 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::get('create', 'create')->name("create");
         Route::get('/edit', 'edit')->name("edit");
     });
+    Route::controller(ContentCtrl::class)->middleware('auth')->prefix('contents/')->name('contents.')->group(function () {
+        Route::get('/', 'index')->name("index");
+        Route::get('create', 'create')->name("create");
+        Route::get('/edit/{id}', 'edit')->name("edit");
+    });
     Route::controller(ContentController::class)->middleware('auth')->prefix('content/')->name('content.')->group(function () {
         Route::get('/images', 'images')->name('images');
+        Route::get('/show-gallery', 'showGallery')->name('showGallery');
 
         Route::post('/', 'store')->name("store");
+        Route::post('/upload-image', 'uploadImage')->name("uploadImage");
         Route::post('/set-thumbnail', 'setThumbnail')->name("setThumbnail");
         Route::post('/update', 'update')->name("update");
         Route::delete('/', 'destroy')->name("destroy");

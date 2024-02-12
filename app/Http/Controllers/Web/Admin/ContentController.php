@@ -29,7 +29,7 @@ class ContentController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'content' => 'required|min:2',
-            'type' => 'required'
+            // 'type' => 'required'
 
         ]);
         if ($validator->fails()) {
@@ -208,8 +208,13 @@ class ContentController extends Controller
     }
     public function images(Request $request)
     {
-        $data = Media::where('content_id', $request->id)->get();
-        return view('pages.admin.content.images', compact('data'));
+        if ($request->id) {
+            $data = Media::where('content_id', $request->id)->where('status_enabled', true)->get();
+            return view('pages.admin.content.images', compact('data'));
+        } else {
+            $data = Media::whereNull('content_id')->where('status_enabled', true)->get();
+            return view('pages.admin.content.data', compact('data'));
+        }
     }
     public function setThumbnail(Request $request)
     {
@@ -226,5 +231,29 @@ class ContentController extends Controller
         }
         $image->delete();
         return response()->json(['message' => "successfully"], Response::HTTP_OK);
+    }
+    public function showGallery(Request $request)
+    {
+        return view('pages.admin.content.gallery');
+    }
+    public function uploadImage(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'image' => 'required',
+        ]);
+        if ($validator->fails()) {
+            $error = [
+                'errors' => $validator->errors()
+            ];
+            return $this->error(ServerResponse::BAD_REQUEST, 400, $error);
+        }
+        $imageName = time() . '-' . Str::random(5) . '.' . $request->image->extension();
+        $request->image->move(public_path('assets/images'), $imageName);
+        $media = [
+            'type' => ImageStatus::image,
+            'url' => $imageName,
+        ];
+        $data =  Media::create($media);
+        return response()->json(['message' => "successfully", 'data' => $data], Response::HTTP_OK);
     }
 }

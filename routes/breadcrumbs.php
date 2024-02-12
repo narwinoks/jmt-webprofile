@@ -34,3 +34,15 @@ Breadcrumbs::for('admin.products.index', function ($trail) {
     $trail->parent('admin.dashboard.index');
     $trail->push('Products', route('admin.products.index'));
 });
+Breadcrumbs::for('admin.contents.index', function ($trail) {
+    $trail->parent('admin.dashboard.index');
+    $trail->push('Content', route('admin.contents.index'));
+});
+Breadcrumbs::for('admin.contents.create', function ($trail) {
+    $trail->parent('admin.contents.index');
+    $trail->push('Create', route('admin.contents.create'));
+});
+Breadcrumbs::for('admin.contents.edit', function ($trail, $author) {
+    $trail->parent('admin.contents.index');
+    $trail->push('Update', route('admin.contents.edit', $author));
+});

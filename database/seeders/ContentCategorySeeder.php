@@ -24,9 +24,14 @@ class ContentCategorySeeder extends Seeder
         // $model->type = 'contact-us';
         // $model->save();
 
+        // $model =  new ContentCategory();
+        // $model->category = 'products';
+        // $model->type = 'products';
+        // $model->save();
+
         $model =  new ContentCategory();
-        $model->category = 'products';
-        $model->type = 'products';
+        $model->category = 'general';
+        $model->type = 'general';
         $model->save();
     }
 }
