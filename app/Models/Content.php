@@ -24,4 +24,12 @@ class Content extends Model
     {
         return $this->belongsTo(Meta::class, 'id', 'content_id');
     }
+    public function getThumbnail()
+    {
+        if ($this->media && $this->media->isNotEmpty()) {
+            return $this->media->first();
+        }
+
+        return $this->media()->first();
+    }
 }

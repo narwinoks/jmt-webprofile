@@ -42,6 +42,12 @@ class DataController extends Controller
             ->addColumn('last', function ($data) {
                 return $data->created_at->diffForHumans();
             })
+            ->editColumn('content', function ($data) {
+                return Str::limit($data->content, 20);
+            })
+            ->editColumn('title', function ($data) {
+                return Str::limit($data->title, 20, '....');
+            })
             ->addIndexColumn()
             ->toJson();
     }

@@ -109,4 +109,4 @@
     </div>
     <!--================================= back to top -->
     @include('templates.public.scripts')
-    @yield('scripts')
+    @stack('scripts')

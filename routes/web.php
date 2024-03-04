@@ -49,7 +49,10 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     Route::controller(InsightController::class)->middleware('auth')->prefix('insight/')->name('insight.')->group(function () {
         Route::get('/', 'index')->name("index");
         Route::get('create', 'create')->name("create");
+        Route::get('export', 'export')->name("export");
         Route::get('/edit/{id}', 'edit')->name("edit");
+
+        Route::post('export', 'store')->name("store");
     });
     Route::controller(ContactUsController::class)->middleware('auth')->prefix('contact/')->name('contact.')->group(function () {
         Route::get('/', 'index')->name("index");
@@ -88,4 +91,7 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     });
 });
 
+Route::get('/insight', [MainController::class, 'insight'])->name("insight");
+Route::get('/insight-data', [MainController::class, 'insightData'])->name("insightData");
+Route::get('/insight/{slug}', [MainController::class, 'detailInsight'])->name("detailInsight");
 Route::get('/{pages}', [MainController::class, 'show_page'])->name("show_page");

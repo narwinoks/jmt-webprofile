@@ -1,5 +1,5 @@
 var POTENZA = {};
- 
+
  (function($){
   "use strict";
 
@@ -23,7 +23,7 @@ var POTENZA = {};
 
   /*************************
        preloader
-  *************************/  
+  *************************/
   POTENZA.preloader = function () {
        $("#load").fadeOut();
        $('#loading').delay(0).fadeOut('slow');
@@ -32,7 +32,7 @@ var POTENZA = {};
 
 /*************************
        mega menu
-*************************/    
+*************************/
  POTENZA.megaMenu = function () {
     $('#menu').megaMenu({
            // DESKTOP MODE SETTINGS
@@ -65,9 +65,9 @@ var POTENZA = {};
 }
 
 
- 
+
 /*************************
-       owl-carousel 
+       owl-carousel
 *************************/
 
  POTENZA.carousel = function () {
@@ -79,7 +79,7 @@ var POTENZA = {};
             $navdots = ($this.data('nav-dots')) ? $this.data('nav-dots') : false,
             $navarrow = ($this.data('nav-arrow')) ? $this.data('nav-arrow') : false,
             $autoplay = ($this.attr('data-autoplay')) ? $this.data('autoplay') : true,
-            $space = ($this.attr('data-space')) ? $this.data('space') : 30;     
+            $space = ($this.attr('data-space')) ? $this.data('space') : 30;
             $(this).owlCarousel({
                 loop: $loop,
                 items: $items,
@@ -96,25 +96,25 @@ var POTENZA = {};
                 nav: $navarrow,
                 navText:["<i class='fa fa-angle-left fa-2x'></i>","<i class='fa fa-angle-right fa-2x'></i>"],
                 autoplay: $autoplay,
-                autoplayHoverPause: true   
-            }); 
-           
-    }); 
+                autoplayHoverPause: true
+            });
+
+    });
 }
 
 
 
 /*************************
        counter
-*************************/  
+*************************/
 
   POTENZA.counters = function () {
           if ($counter.exists()) {
               $counter.each(function () {
-                  var $elem = $(this);                 
+                  var $elem = $(this);
                       $elem.appear(function () {
                           $elem.find('.timer').countTo();
-                      });                  
+                      });
               });
           }
   };
@@ -125,8 +125,8 @@ var POTENZA = {};
 *************************/
   POTENZA.accordion = function () {
      var   $acpanel = $(".accordion .acd-group > .acd-des"),
-           $acsnav = $(".accordion .acd-group > .acd-heading");      
-         
+           $acsnav = $(".accordion .acd-group > .acd-heading");
+
           $acpanel.hide().first().slideDown("easeOutExpo");
           $acsnav.first().addClass("acd-active");
           $acsnav.on('click', function () {
@@ -146,7 +146,7 @@ var POTENZA = {};
  POTENZA.Isotope = function () {
       var $isotope = $(".isotope"),
           $itemElement = '.grid-item',
-          $filters = $('.isotope-filters');      
+          $filters = $('.isotope-filters');
         if ($isotope.exists()) {
             $isotope.isotope({
             resizable: true,
@@ -154,13 +154,13 @@ var POTENZA = {};
               masonry: {
                 gutterWidth: 10
               }
-            });     
+            });
        $filters.on( 'click', 'button', function() {
          var $val = $(this).attr('data-filter');
-             $isotope.isotope({ filter: $val });       
+             $isotope.isotope({ filter: $val });
              $filters.find('.active').removeClass('active');
              $(this).addClass('active');
-      });     
+      });
     }
  }
 
@@ -169,7 +169,7 @@ var POTENZA = {};
 *************************/
   POTENZA.masonry = function () {
         var $masonry = $('.masonry .masonry'),
-            $itemElement = '.masonry .masonry-item'; 
+            $itemElement = '.masonry .masonry-item';
             if ($masonry.exists()) {
                 $masonry.isotope({
                   resizable: true,
@@ -177,14 +177,14 @@ var POTENZA = {};
                   masonry: {
                     gutterWidth: 10
                   }
-                });  
+                });
             }
   }
-  
+
 
   /*************************
        Magnific Popup
-*************************/ 
+*************************/
   POTENZA.mediaPopups = function () {
     if ($(".popup-gallery").exists()) {
           $('.popup-gallery').magnificPopup({
@@ -203,7 +203,7 @@ var POTENZA = {};
                       return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
                   }
              }
-         }); 
+         });
       }
       if ($(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
            $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
@@ -235,7 +235,7 @@ var POTENZA = {};
  POTENZA.tabs = function () {
        var $tabsdata = $("#tabs li[data-tabs]"),
            $tabscontent = $(".tabcontent"),
-           $tabsnav = $(".tabs li");       
+           $tabsnav = $(".tabs li");
 
       $tabsdata.on('click', function () {
         $tabsdata.removeClass('active');
@@ -254,7 +254,7 @@ var POTENZA = {};
           }, 220);
       });
       $tabscontent.hide().filter(':first').show();
- 
+
    }
 
 
@@ -273,15 +273,15 @@ var POTENZA = {};
         $menu_btn.on('click', function () {
            if ($(".search").exists()){
              if ($(".search").hasClass('is-visible')){
-                   return false;  
+                   return false;
              }
            }
 
 
-            toggleslidemenu();   
-            return false;   
+            toggleslidemenu();
+            return false;
         });
-       
+
         $overlay.on('click', function () {
             toggleslidemenu('close');
             return false;
@@ -294,10 +294,10 @@ var POTENZA = {};
             if(type=="close") {
                 $slidemenu.removeClass('side-content-open');
                 $overlay.removeClass('is-visible');
-              } else {         
+              } else {
                 $slidemenu.addClass('side-content-open');
                 $overlay.addClass('is-visible');
-                
+
             }
          }
  }
@@ -315,16 +315,16 @@ var POTENZA = {};
        $search_btn.on('click', function () {
             var $type = '';
             ($search_area.hasClass('is-visible')) ? $type = 'close' : $type = '';
-            toggleSearch($type);   
-            return false;   
+            toggleSearch($type);
+            return false;
       });
 
        $search_btn.on('click', function () {
             if ($(".side-content-open").exists()){
             toggleSearch('close');
             return false;
-            } 
-            
+            }
+
       });
 
       $overlay.on('click', function () {
@@ -338,7 +338,7 @@ var POTENZA = {};
           $search_btn.removeClass('search-is-visible');
           $overlay.removeClass('is-visible');
           $body.css({"overflow":"visible"});
-        } else {         
+        } else {
           $search_btn.addClass('search-is-visible');
           $search_area.addClass('is-visible');
           $overlay.addClass('is-visible');
@@ -350,7 +350,7 @@ var POTENZA = {};
 
   /*************************
        Progressbar
-*************************/  
+*************************/
     POTENZA.progressBar = function () {
 
         if ($progressBar.exists()) {
@@ -387,7 +387,7 @@ var POTENZA = {};
   /*************************
       Scroll to Top
 *************************/
-  POTENZA.scrolltotop = function () {  
+  POTENZA.scrolltotop = function () {
       var $scrolltop = $('.back-to-top');
 
       $scrolltop.on('click', function () {
@@ -398,7 +398,7 @@ var POTENZA = {};
           setTimeout(function(){ $scrolltop.removeClass('back-run');},1000);
           return false;
       });
-      $window.on('scroll', function () {   
+      $window.on('scroll', function () {
           if($window.scrollTop() >= 1000) {
               $scrolltop.addClass("show");
               $scrolltop.addClass("back-down");
@@ -407,20 +407,20 @@ var POTENZA = {};
                setTimeout(function(){ $scrolltop.removeClass('back-down');},300);
             }
        });
-	   
+
 	   $(".back-to-top img").mouseover(function () {
 			$(this).attr('src', $(this).data("hover"));
 		}).mouseout(function () {
 			$(this).attr('src', $(this).data("src"));
 		});
   }
-    
+
 
 /*************************
       sticky Footer
 *************************/
 
- POTENZA.stickyFooter = function () { 
+ POTENZA.stickyFooter = function () {
     var  $footerfixed = $("#footer-fixed");
        if ($footerfixed.exists()) {
          var footerheight = $('#footer-fixed').height() + 70;
@@ -430,7 +430,7 @@ var POTENZA = {};
 
 
  /*************************
-      Slick slider  
+      Slick slider
 *************************/
   POTENZA.slickslider = function () {
       if ($(".slider-slick").exists()) {
@@ -450,9 +450,9 @@ var POTENZA = {};
         });
       }
   }
-  
+
 /*************************
-  Php Contact Form 
+  Php Contact Form
 *************************/
 POTENZA.Contactform = function () {
   $( "#contactform").submit(function( event ) {

@@ -25,6 +25,11 @@ Breadcrumbs::for('admin.insight.edit', function ($trail, $model) {
     $trail->parent('admin.insight.index');
     $trail->push('Edit', route('admin.insight.edit', $model));
 });
+Breadcrumbs::for('admin.insight.export', function ($trail) {
+    $trail->parent('admin.insight.index');
+    $trail->push('Export Csv', route('admin.insight.export'));
+});
+
 
 Breadcrumbs::for('admin.contact.index', function ($trail) {
     $trail->parent('admin.dashboard.index');
