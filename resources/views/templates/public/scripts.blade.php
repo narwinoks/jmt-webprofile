@@ -1,41 +1,41 @@
 <!-- jquery  -->
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/popper.min.js') }}"></script>
 
 <!-- bootstrap -->
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
 <!-- mega-menu -->
-<script type="text/javascript" src="assets/js/mega-menu/mega_menu.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/mega-menu/mega_menu.js') }}"></script>
 
 <!-- owl-carousel -->
-<script type="text/javascript" src="assets/js/owl-carousel/owl.carousel.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.appear.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/owl-carousel/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/jquery.appear.js') }}"></script>
 
 <!-- magnific-popup -->
-<script type="text/javascript" src="assets/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
 
 <!-- appear -->
-<script type="text/javascript" src="assets/js/jquery.appear.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/jquery.appear.js') }}"></script>
 
 <!-- counter -->
-<script type="text/javascript" src="assets/js/counter/jquery.countTo.js"></script>
+<script type="text/javascript" src="{{ asset('assets/js/counter/jquery.countTo.js') }}"></script>
 
 <!-- revolution -->
-<script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
 
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.layeranimation.min.js">
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}">
 </script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/custom.js') }}"></script>
 <script type="text/javascript">
     var tpj = jQuery;
     var revapi19;

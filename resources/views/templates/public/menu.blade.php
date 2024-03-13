@@ -15,7 +15,7 @@
                                 <!-- menu logo -->
                                 <ul class="menu-logo">
                                     <li>
-                                        <a href="index" aria-label="jasamedikatransmedic"><img id="logo_img" src="assets/images/logo.webp" alt="logo"> </a>
+                                        <a href="{{ url('/index') }}" aria-label="jasamedikatransmedic"><img id="logo_img" src="{{ asset('assets/images/logo.webp') }}" alt="logo"> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -33,7 +33,7 @@
                                 <ul class="menu-links">
                                  @foreach ($menus as $key => $menu)
                                     <li>
-                                        <a href="{{ $menu->url ?? 'javascript:void(0)' }}">{{ $menu->name }} {!! count($menu->children) > 0 ? '<i class="fa fa-angle-down fa-indicator"></i>' : '' !!}</a>
+                                        <a href="{{ url('/'.$menu->url) ?? 'javascript:void(0)' }}">{{ $menu->name }} {!! count($menu->children) > 0 ? '<i class="fa fa-angle-down fa-indicator"></i>' : '' !!}</a>
                                         @if ($menu->children)
                                             @if ($menu->id == 2)
                                             <div class="drop-down grid-col-12">
@@ -41,30 +41,30 @@
                                                     <div class="grid-col-4">
                                                         <div class="grid-row">
                                                             <div class="grid-col-12">
-                                                                <h4><a class="mss-top-heading-link" href="market-specific-solutions-healthcare">Healthcare</a></h4>
+                                                                <h4><a class="mss-top-heading-link" href="{{ url('/market-specific-solutions-healthcare') }} ">Healthcare</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-transmedic">Transmedic Sistem Informasi Manajemen Rumah Sakit</a>
+                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-transmedic') }}">Transmedic Sistem Informasi Manajemen Rumah Sakit</a>
                                                                         <ul class="sub-level-2">
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-transmedic-eis">Executive Information System (EIS)</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-transmedic-telehealth">Telehealth</a>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-transmedic-eis') }}">Executive Information System (EIS)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-transmedic-telehealth') }}">Telehealth</a>
                                                                                 <ul class="sub-level-3">
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">Telemedicine</a></li>
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">Rekam Medis Elektronik (RME)</a></li>
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">Tele-ICU</a></li>
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">Tele-EKG</a></li>
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">Teleconsultation</a></li>
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">IOT Ambulance</a></li>
-                                                                                    <li><a href="market-specific-solutions-healthcare#healthcare-telehealth-telemedicine">Online Emergency Call Button</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">Telemedicine</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">Rekam Medis Elektronik (RME)</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">Tele-ICU</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">Tele-EKG</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">Teleconsultation</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">IOT Ambulance</a></li>
+                                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-telehealth-telemedicine') }}">Online Emergency Call Button</a></li>
                                                                                 </ul>
                                                                             </li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-e-klinik">Sistem Informasi Manajemen Klinik (e-Klinik)</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-e-puskesmas">Sistem Informasi Manajemen Puskesmas (e-Puskesmas)</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-medisis">MEDISis</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-pacs">Picture Archiving & Communication System (PACS)</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-lis">Laboratory Information System (LIS)</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-hris">Human Resource Information System (HRIS)</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-nurse-assistant">Nurse Assistant</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare#healthcare-kiosk">Sistem Antrian Mandiri (Kios-K)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-e-klinik') }}">Sistem Informasi Manajemen Klinik (e-Klinik)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-e-puskesmas') }}">Sistem Informasi Manajemen Puskesmas (e-Puskesmas)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-medisis') }}">MEDISis</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-pacs') }}">Picture Archiving & Communication System (PACS)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-lis') }}">Laboratory Information System (LIS)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-hris') }}">Human Resource Information System (HRIS)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-nurse-assistant') }}">Nurse Assistant</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare#healthcare-kiosk') }}">Sistem Antrian Mandiri (Kios-K)</a></li>
                                                                         </ul>
                                                                     </li>
                                                                 </ul>
@@ -74,57 +74,57 @@
                                                     <div class="grid-col-8">
                                                         <div class="grid-row">
                                                             <div class="grid-col-4">
-                                                                <h4><a class="mss-top-heading-link" href="market-specific-solutions-healthcare-operator">Healthcare Operator</a></h4>
+                                                                <h4><a class="mss-top-heading-link" href="{{ url('/market-specific-solutions-healthcare-operator') }} ">Healthcare Operator</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-healthcare-operator#hospital-management-consulting">Hospital Management Consulting</a></li>
-                                                                    <li><a href="market-specific-solutions-healthcare-operator#epd">Hospital Engineering, Planning, and Design (EPD)</a></li>
-                                                                    <li><a href="market-specific-solutions-healthcare-operator#integrated-digital-healthcare-system">Integrated Digital Healthcare System</a>
+                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare-operator#hospital-management-consulting') }}">Hospital Management Consulting</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare-operator#epd') }}">Hospital Engineering, Planning, and Design (EPD)</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-healthcare-operator#integrated-digital-healthcare-system') }}">Integrated Digital Healthcare System</a>
                                                                         <ul class="sub-level-2">
-                                                                            <li><a href="market-specific-solutions-healthcare-operator#integrated-digital-healthcare-system-rsjp-paramarta">RSJP Paramarta</a></li>
-                                                                            <li><a href="market-specific-solutions-healthcare-operator#integrated-digital-healthcare-system-medirest">Medirest</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare-operator#integrated-digital-healthcare-system-rsjp-paramarta') }}">RSJP Paramarta</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-healthcare-operator#integrated-digital-healthcare-system-medirest') }}">Medirest</a></li>
                                                                         </ul>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                             <div class="grid-col-4">
-                                                                <h4><a class="mss-top-heading-link" href="market-specific-solutions-industry-training">Industry Training</a></h4>
+                                                                <h4><a class="mss-top-heading-link" href="{{ url('/market-specific-solutions-industry-training') }}">Industry Training</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-industry-training#training">Training</a>
+                                                                    <li><a href="{{ url('/market-specific-solutions-industry-training#training') }}">Training</a>
                                                                         <ul class="sub-level-2">
-                                                                            <li><a href="market-specific-solutions-industry-training#training-networking">Networking</a></li>
-                                                                            <li><a href="market-specific-solutions-industry-training#training-ec-council">EC-Council</a></li>
-                                                                            <li><a href="market-specific-solutions-industry-training#training-mikrotik">MikroTik Authorized</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-industry-training#training-networking') }}">Networking</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-industry-training#training-ec-council') }}">EC-Council</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-industry-training#training-mikrotik') }} ">MikroTik Authorized</a></li>
                                                                         </ul>
                                                                     </li>
-                                                                    <li><a href="market-specific-solutions-industry-training#junior-talent">Junior Talent Trainee & Incubation Program</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-industry-training#junior-talent') }}">Junior Talent Trainee & Incubation Program</a></li>
                                                                 </ul>
                                                             </div>
                                                             <div class="grid-col-4">
-                                                                <h4><a class="mss-top-heading-link" href="market-specific-solutions-facility-management">Facility Management</a></h4>
+                                                                <h4><a class="mss-top-heading-link" href="{{ url('/market-specific-solutions-facility-management') }}">Facility Management</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-facility-management#epd">Engineering, Planning, and Design (EPD)</a>
+                                                                    <li><a href="{{ url('/market-specific-solutions-facility-management#epd') }}">Engineering, Planning, and Design (EPD)</a>
                                                                         <ul class="sub-level-2">
-                                                                            <li><a href="market-specific-solutions-facility-management#epd-bunihayu">Bunihayu Forest (Eco-Edu Tourism)</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-facility-management#epd-bunihayu') }}">Bunihayu Forest (Eco-Edu Tourism)</a></li>
                                                                         </ul>
                                                                     </li>
-                                                                    <li><a href="market-specific-solutions-facility-management#interior-management">Interior Management</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-facility-management#interior-management') }}">Interior Management</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                         <div class="grid-row">
                                                             <div class="grid-col-4">
-                                                                <h4><a class="mss-top-heading-link" href="market-specific-solutions-scm">Supply Chain Management</a></h4>
+                                                                <h4><a class="mss-top-heading-link" href="{{ url('/market-specific-solutions-scm') }}">Supply Chain Management</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-scm#scm-supply-chain-financial">Supply Chain Financial</a></li>
-                                                                    <li><a href="market-specific-solutions-scm#scm-e-logistic">E-Logistic (SCM)</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-scm#scm-supply-chain-financial') }}">Supply Chain Financial</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-scm#scm-e-logistic') }}">E-Logistic (SCM)</a></li>
                                                                 </ul>
                                                             </div>
                                                             <div class="grid-col-4">
-                                                                <h4><a class="mss-top-heading-link" href="market-specific-solutions-sport-wellness">Sports & Wellness</a></h4>
+                                                                <h4><a class="mss-top-heading-link" href="{{ url('/market-specific-solutions-sport-wellness') }}">Sports & Wellness</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-sport-wellness#sport-wellness-olahrago">OlahraGo</a>
+                                                                    <li><a href="{{ url('/market-specific-solutions-sport-wellness#sport-wellness-olahrago') }}">OlahraGo</a>
                                                                         <ul class="sub-level-2">
-                                                                            <li><a href="market-specific-solutions-sport-wellness#sport-wellness-tiis">TaekWondo Indonesia Information System</a></li>
+                                                                            <li><a href="{{ url('/market-specific-solutions-sport-wellness#sport-wellness-tiis') }}">TaekWondo Indonesia Information System</a></li>
                                                                         </ul>
                                                                     </li>
                                                                 </ul>
@@ -132,10 +132,10 @@
                                                             <div class="grid-col-4">
                                                                 <h4><a class="mss-top-heading-link" href="market-specific-solutions-project">Project</a></h4>
                                                                 <ul class="sub-level-1">
-                                                                    <li><a href="market-specific-solutions-project#project-satusehat">SatuSehat Solution</a></li>
-                                                                    <li><a href="market-specific-solutions-project#project-medifant">Medifant</a></li>
-                                                                    <li><a href="market-specific-solutions-project#project-covid19">COVID-19 System</a></li>
-                                                                    <li><a href="market-specific-solutions-project#project-aplikasi-sim-online">Aplikasi SIM Online</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-project#project-satusehat') }} ">SatuSehat Solution</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-project#project-medifant') }}">Medifant</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-project#project-covid19') }}">COVID-19 System</a></li>
+                                                                    <li><a href="{{ url('/market-specific-solutions-project#project-aplikasi-sim-online') }}">Aplikasi SIM Online</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -143,10 +143,10 @@
                                             @endif
                                             @if ($menu->id == 49)
                                             <ul class="drop-down-multilevel">
-                                                <li><a href="company-about-us">About Us</a></li>
-                                                <li><a href="company-milestone">Milestone</a></li>
-                                                <li><a href="company-partners">Partners</a></li>
-                                                <li><a href="company-location">Location</a></li>
+                                                <li><a href="{{ url('/company-about-us') }}">About Us</a></li>
+                                                <li><a href="{{ url('/company-milestone') }}">Milestone</a></li>
+                                                <li><a href="{{ url('/company-partners') }}">Partners</a></li>
+                                                <li><a href="{{ url('/company-location') }}">Location</a></li>
                                             </ul>
                                             @endif
                                         @endif

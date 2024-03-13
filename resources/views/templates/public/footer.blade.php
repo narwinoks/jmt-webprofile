@@ -42,36 +42,36 @@
                             data-space="0" data-loop="true">
 
                             <img class="img-fluid center-block footer-partner"
-                                src="assets/images/partner-antamedika.webp" alt="">
+                                src="{{ asset('') }} assets/images/partner-antamedika.webp" alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-arogya.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-arogya.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-bni.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-bni.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-bpjs.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-bpjs.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-dell.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-dell.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-nec.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-nec.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-ocbc.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-ocbc.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-pesona.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-pesona.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-rsjp.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-rsjp.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-temp.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-temp.webp') }}"
                                 alt="">
 
-                            <img class="img-fluid center-block footer-partner" src="assets/images/partner-we+.webp"
+                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-we+.webp') }}"
                                 alt="">
 
                         </div>

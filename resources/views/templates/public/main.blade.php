@@ -4,7 +4,7 @@
     <!--=================================loading -->
     <div id="loading">
         <div id="loading-center">
-            <img src="assets/images/loading-jmt.gif" alt="">
+            <img src="{{ asset('assets/images/loading-jmt.gif') }}" alt="">
         </div>
     </div>
     @include('templates.public.menu')
