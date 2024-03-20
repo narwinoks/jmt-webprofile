@@ -37,43 +37,22 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="about-content">
+                        @php
+                            $partners = App\Models\Content::with(['category', 'mediaku'])
+                                ->where('status_enabled', true)
+                                ->whereHas('category', function ($query) {
+                                    $query->where('category', 'partner');
+                                })
+                                ->get();
+                        @endphp
                         <h5 class="mb-2">Partner</h5>
                         <div class="owl-carousel" data-items="5" data-lg-items="4" data-md-items="3" data-sm-items="2"
                             data-space="0" data-loop="true">
-
-                            <img class="img-fluid center-block footer-partner"
-                                src="{{ asset('') }} assets/images/partner-antamedika.webp" alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-arogya.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-bni.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-bpjs.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-dell.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-nec.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-ocbc.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-pesona.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-rsjp.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-temp.webp') }}"
-                                alt="">
-
-                            <img class="img-fluid center-block footer-partner" src="{{ asset('assets/images/partner-we+.webp') }}"
-                                alt="">
-
+                            @foreach ($partners as $key => $partner)
+                                <img class="img-fluid center-block footer-partner"
+                                    src="{{ asset('assets/images/' . ($partner->mediaku && $partner->mediaku->url ? $partner->mediaku->url : '')) }}"
+                                    alt="">
+                            @endforeach
                         </div>
                     </div>
                 </div>
