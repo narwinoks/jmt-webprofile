@@ -5,33 +5,32 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="social">
+                        @php
+                            $contacts = App\Models\Content::with(['category', 'mediaku'])
+                                ->where('status_enabled', true)
+                                ->whereHas('category', function ($query) {
+                                    $query->where('category', 'contact-us');
+                                })
+                                ->get();
+                        @endphp
                         <h5 class="mb-2">About Us</h5>
                         <ul>
-                            <li>
-                                <a href="https://www.instagram.com/jmtgroup.id/" target="_blank"> <i
-                                        class="fa fa-instagram"></i>@jmtgroup.id</a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCi1bwrFtfHKrDLTRyAkH5TA" target="_blank"> <i
-                                        class="fa fa-youtube"></i>Jasa Medika Transmedic</a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@jasamedikatransmedic.com"> <i
-                                        class="fa fa-envelope-o"></i>info@jasamedikatransmedic.com</a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/+6287870007781" target="_blank"> <i
-                                        class="fa fa-whatsapp"></i>+62 878 7000 7781</a>
-                            </li>
-                            <br>
-                            <li>
-                                <p>
-                                    <i class="fa fa-building"></i>
-                                    Gedung Paramarta Tridharma<br>
-                                    <span>Jl. Cikutra Baru Raya No. 28</span><br>
-                                    <span>Bandung 40124 Indonesia</span>
-                                </p>
-                            </li>
+                            @foreach ($contacts as $key => $contact)
+                                @if ($contact->title != 'Address')
+                                    <li>
+                                        <a href="{!! $contact->content !!}" target="_blank"> <i
+                                                class="{{ $contact->mediaKu->url }}"></i>{{ $contact->title }}</a>
+                                    </li>
+                                @else
+                                    <br>
+                                    <li>
+                                        <p>
+                                            <i class="{{ $contact->mediaKu->url }}"></i>
+                                            {!! $contact->content !!}
+                                        </p>
+                                    </li>
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
                 </div>
