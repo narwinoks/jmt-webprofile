@@ -31,12 +31,22 @@ class MainController extends Controller
             case 'market':
                 $pages = "market." . $r['pages'];
                 break;
+            case 'products':
+                $products = Content::with(['category', 'mediaku'])
+                    ->where('status_enabled', true)
+                    ->whereHas('category', function ($query) {
+                        $query->where('category', 'products');
+                    })
+                    ->get();
+                $compact['products'] = $products;
+                $pages = $r["pages"];
+                break;
             default:
                 $pages = $r["pages"];
                 break;
         }
         array_push($compact, "pages");
-        return view("pages.public." . $pages, compact($compact));
+        return view("pages.public." . $pages, $compact);
     }
     public function insight(Request $request)
     {
