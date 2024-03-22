@@ -54,8 +54,10 @@ class MainController extends Controller
     }
     public function detailInsight(Request $request, $slug)
     {
-        $content = Content::where('slug', $slug)->whereHas('category', function ($query) {
+        $content = Content::with('media')->where('slug', $slug)->whereHas('category', function ($query) {
             $query->where('category', '=', 'insight');
+        })->whereHas('media', function ($query) {
+            $query->where('status_enabled', true);
         })->first();
         return view('pages.public.insight.detail', [
             'content' => $content,

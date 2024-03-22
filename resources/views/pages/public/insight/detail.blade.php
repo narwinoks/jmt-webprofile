@@ -7,9 +7,37 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="blog-entry mb-3">
-                        <div class="entry-image clearfix">
-                            <img class="img-fluid" src="assets/images/insight-teknologi-kesehatan-digital.jpg" alt="">
-                        </div>
+                        @if (count($content->media) > 1)
+                            <div class="owl-carousel" data-nav-dots="true" data-nav-arrow="false" data-items="1"
+                                data-sm-items="1" data-lg-items="1" data-md-items="1" data-autoplay="false">
+                                @foreach ($content->media as $key => $item)
+                                    @if ($item->type == 'video')
+                                        <div class="item">
+                                            <div class="video-local-container">
+                                                <video width="50%" height="auto" autoplay muted controls
+                                                    class="video-local-thumbnail">
+                                                    <source src="{{ asset('assets/video/' . $item->url) }}">
+                                                    <p class="warning">Your browser does not support HTML5 video.</p>
+                                                </video>
+                                            </div>
+                                        </div>
+                                    @elseif($item->type == 'image')
+                                        <div class="item">
+                                            <div class="entry-image clearfix">
+                                                <img class="img-fluid" src="{{ asset('assets/images/' . $item->url) }}"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        @else
+                            <div class="entry-image clearfix">
+                                <img class="img-fluid"
+                                    src="{{ asset('assets/images/insight-teknologi-kesehatan-digital.jpg') }}"
+                                    alt="">
+                            </div>
+                        @endif
                         <div class="clearfix"></div>
                         <div class="blog-detail mt-3">
                             <div class="entry-title mb-1"><br>

@@ -8,52 +8,6 @@
             </div>
         </div>
     </section>
-    <section class="counter page-section-ptb sec-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-sm-12">
-                    <img class="img-fluid center-block" src="assets/images/company-about.webp" alt=""><br><br>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <h4 class="mb-3"><strong>About Us</strong></h4>
-                    <p class="mb-2">Jasa Medika Transmedic Group (dikenal sebagai JMT Group) adalah grup perusahaan dengan
-                        bisnis utama pengembang Sistem Informasi manajemen kesehatan khususnya untuk Rumah Sakit, Klinik dan
-                        Instansi Pendidikan yang telah dijalani sejak tahun 2022.</p>
-                    <p class="mb-2">JMT Group memiliki beberapa anak perusahaan yang bisnisnya bergerak di bidang:</p>
-                    <ul class="list-mark mb-3">
-                        <li>Healthcare Operator (Management Consultant, Hospital EPD dan Integrated Digital Healthcare
-                            System)</li>
-                        <li>Sport and Wellness Management System</li>
-                        <li>Facility Management (Engineering, Planning and Design) dan Interior Management</li>
-                        <li>Industry Training</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 text-center">
-                            <div class="counter-block counter-about">
-                                <b class="timer mt-3 mb-3 a-counter" data-to="100" data-speed="10000"></b>
-                                <h3 class="about-counter">+</h3>
-                                <h6 class="text-black mt-2 mb-2">Klien<br>Rumah Sakit</h6>
-                                <p>Dipercaya oleh lebih dari 100 klien Rumah sakit, Klinik dan Fasilitas Pelayanan Kesehatan
-                                    di seluruh Indonesia</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 text-center">
-                            <div class="counter-block counter-about">
-                                <b class="timer mt-3 mb-3 a-counter" data-to="150" data-speed="10000"></b>
-                                <h3 class="about-counter">+</h3>
-                                <h6 class="text-black mt-2 mb-2">Programmer<br>Berpengalaman</h6>
-                                <p>Didukung oleh lebih dari 150 Programmer dan Tenaga Profesional yang berpengalaman</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="page-section-pb">
         <div class="container">
             <div class="row valign">
