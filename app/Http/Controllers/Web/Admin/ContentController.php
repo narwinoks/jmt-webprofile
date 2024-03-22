@@ -39,7 +39,12 @@ class ContentController extends Controller
             return $this->error(ServerResponse::BAD_REQUEST, 400, $error);
         }
         try {
-            $data = $request->only('title', 'content');
+            $data = $request->only('title');
+            if ($request->json == true) {
+                $data['content'] = json_encode($request->all(),true);
+            }else{
+                $data['content'] = $request->content;
+            }
             $data['slug'] = Str::slug($request->title, '-');
             $data['content_category_id'] = ContentCategory::Where('category', $request->category)->first()->id ?? null;
             $content = Content::create($data);

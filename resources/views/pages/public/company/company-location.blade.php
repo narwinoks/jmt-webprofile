@@ -32,8 +32,9 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <h6>Gedung PARAMARTA TRIDHARMA</h6>
-                                    <span class="mb-0">Jl. Cikutra Baru Raya No 28<br>Bandung 40124 Indonesia</span>
+                                    <h6>
+                                        {!! App\Helpers\contentName('address') !!}
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +49,9 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <h6>+62 22 877877 81</h6>
+                                    <h6>
+                                        {!! App\Helpers\contentTitle('phone') !!}
+                                    </h6>
                                     <span class="mb-0">Phone</span>
                                 </div>
                             </div>
@@ -64,7 +67,9 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <h6>info@jasamedikatransmedic.com</h6>
+                                    <h6>
+                                        {!! App\Helpers\contentTitle('email') !!}
+                                    </h6>
                                     <span class="mb-0">Email</span>
                                 </div>
                             </div>
@@ -80,7 +85,9 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <h6>jmtgroup.id</h6>
+                                    <h6>
+                                        {!! App\Helpers\contentTitle('instagram') !!}
+                                    </h6>
                                     <span class="mb-0">Instagram</span>
                                 </div>
                             </div>
