@@ -93,15 +93,11 @@
                              style="background-image: url({{ asset('assets/template/img/000m.jpg') }})"></span>
                          <div class="d-none d-xl-block ps-2">
                              <div>{{ Auth::user()->name }}</div>
-                             <div class="mt-1 small text-muted">UI Designer</div>
+                             <div class="mt-1 small text-muted">ADMIN</div>
                          </div>
                      </a>
                      <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                         <a href="#" class="dropdown-item">Status</a>
-                         <a href="#" class="dropdown-item">Profile</a>
-                         <a href="#" class="dropdown-item">Feedback</a>
                          <div class="dropdown-divider"></div>
-                         <a href="#" class="dropdown-item">Settings</a>
                          <a href="#" class="dropdown-item" id="logout">Logout</a>
                      </div>
                      <form action="{{ route('logout') }}" method="post" id="logout-form">
