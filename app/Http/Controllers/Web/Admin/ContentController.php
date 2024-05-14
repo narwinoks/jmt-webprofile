@@ -128,7 +128,7 @@ class ContentController extends Controller
             if ($content) {
                 $data = $request->only('title', 'content');
                 if ($request->title != $request->oldTitle) {
-                    $data['slug'] = Str::slug($request->title, '-');
+                    // $data['slug'] = Str::slug($request->title, '-');
                 }
                 $data['content_category_id'] = ContentCategory::Where('category', $request->category)->first()->id ?? null;
                 $content->update($data);

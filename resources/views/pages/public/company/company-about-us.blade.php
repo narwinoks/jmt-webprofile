@@ -9,7 +9,6 @@
         </div>
     </section>
     {!! App\Helpers\contentName('visi-misi') !!}
-    {!! App\Helpers\contentName('digitalizings') !!}
     {!! App\Helpers\contentName('accreditations') !!}
     <section class="blue-bg our-story page-section-ptb">
         <div class="container">
