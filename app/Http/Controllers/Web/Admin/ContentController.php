@@ -52,7 +52,7 @@ class ContentController extends Controller
             $image = [];
             if ($type == ImageStatus::embed) {
                 $data = [
-                    'type' => ImageStatus::image,
+                    'type' => ImageStatus::embed,
                     'url' => $request->embed,
                     'content_id' => $content->id
                 ];

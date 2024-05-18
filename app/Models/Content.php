@@ -20,6 +20,10 @@ class Content extends Model
     {
         return $this->hasMany(Media::class);
     }
+    public function thumbnail()
+    {
+        return $this->belongsTo(Media::class, 'id','content_id');
+    }
     public function mediaKu()
     {
         return $this->belongsTo(Media::class, 'id', 'content_id');

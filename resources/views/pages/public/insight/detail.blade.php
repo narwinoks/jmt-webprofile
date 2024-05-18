@@ -28,15 +28,46 @@
                                                     alt="">
                                             </div>
                                         </div>
+                                    @else
+                                        <div class="entry-image clearfix">
+                                            <div class="wrapper-youtube-video">
+                                                <div class="h_iframe">
+                                                    <iframe class="video-info-kesehatan-youtube" src="{{ $item->url }}"
+                                                        frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endif
                                 @endforeach
                             </div>
                         @else
-                            <div class="entry-image clearfix">
-                                <img class="img-fluid"
-                                    src="{{ asset('assets/images/insight-teknologi-kesehatan-digital.jpg') }}"
-                                    alt="">
-                            </div>
+                            @if ($content->media[0]->type == 'embed')
+                                <div class="entry-image clearfix">
+                                    <div class="wrapper-youtube-video">
+                                        <div class="h_iframe">
+                                            <iframe class="video-info-kesehatan-youtube" src="{{ $content->media[0]->url }}"
+                                                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($content->media[0]->type == 'image')
+                                <div class="entry-image clearfix">
+                                    <img class="img-fluid" src="{{ asset('assets/images/' . $content->media[0]->url) }}"
+                                        alt="{{ $content->title }}">
+                                </div>
+                            @endif
+                            @if ($content->media[0]->type == 'video')
+                                <div class="entry-image clearfix">
+                                    <div class="video-local-container">
+                                        <video width="50%" height="auto" autoplay muted controls
+                                            class="video-local-thumbnail">
+                                            <source src="{{ asset('assets/video/' . $content->media[0]->url) }}">
+                                            <p class="warning">Your browser does not support HTML5 video.</p>
+                                        </video>
+                                    </div>
+                                </div>
+                            @endif
                         @endif
                         <div class="clearfix"></div>
                         <div class="blog-detail mt-3">
