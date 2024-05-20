@@ -3,7 +3,7 @@
         $data = json_decode($career->content, true);
     @endphp
        <div class="acd-group">
-        <a href="#" class="acd-heading"><span class="ti-desktop text-blue"></span> {{ $career->title }}</a>
+        <a href="#" class="acd-heading"><span class="{{ $data['icon'] ?? 'ti-desktop' }} text-blue"></span> {{ $career->title }}</a>
         <div class="acd-des">
             <div class="row">
                 <div class="col-md-12 text-left">

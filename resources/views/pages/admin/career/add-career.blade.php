@@ -28,6 +28,12 @@
                 <textarea class="tinymce" name="kualifikasi" id="kualifikasi" rows="6" placeholder="Content.."></textarea>
             </div>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Icon</label>
+            <input type="text" class="form-control" id="icon" name="icon" placeholder="Fullstact Progammer">
+            <span class="error-icon text-danger d-none"></span>
+        </div>
+    </div>
     </div>
     <script>
         tinymce.init({

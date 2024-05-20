@@ -106,7 +106,8 @@ class AdminController extends Controller
         $content = [
             'kualifikasi' => $request->kualifikasi,
             'contact' => $request->contact,
-            'description' => $request->description
+            'description' => $request->description,
+            'icon' => $request->icon,
         ];
         $data['content'] = json_encode($content);
         try {

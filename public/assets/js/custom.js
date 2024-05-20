@@ -124,19 +124,19 @@ var POTENZA = {};
       Accordion
 *************************/
   POTENZA.accordion = function () {
-     var   $acpanel = $(".accordion .acd-group > .acd-des"),
-           $acsnav = $(".accordion .acd-group > .acd-heading");
+    //  var   $acpanel = $(".accordion .acd-group > .acd-des"),
+    //        $acsnav = $(".accordion .acd-group > .acd-heading");
 
-          $acpanel.hide().first().slideDown("easeOutExpo");
-          $acsnav.first().addClass("acd-active");
-          $acsnav.on('click', function () {
-              var $this = $(this).next(".acd-des");
-              $(this).closest('.accordion').find(".acd-group").removeClass("acd-active");
-              $(this).parent().addClass("acd-active");
-              $(this).closest('.accordion').find(".acd-des").not($this).slideUp("easeInExpo");
-              $(this).next().slideDown("easeOutExpo");
-              return false;
-        });
+    //       $acpanel.hide().first().slideDown("easeOutExpo");
+    //       $acsnav.first().addClass("acd-active");
+    //       $acsnav.on('click', function () {
+    //           var $this = $(this).next(".acd-des");
+    //           $(this).closest('.accordion').find(".acd-group").removeClass("acd-active");
+    //           $(this).parent().addClass("acd-active");
+    //           $(this).closest('.accordion').find(".acd-des").not($this).slideUp("easeInExpo");
+    //           $(this).next().slideDown("easeOutExpo");
+    //           return false;
+    //     });
   }
 
 
