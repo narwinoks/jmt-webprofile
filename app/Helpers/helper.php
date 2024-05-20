@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Helpers;
-
+use DateTime;
 use App\Models\Content;
 
 if (!function_exists('contentName')) {
@@ -42,3 +42,21 @@ if (!function_exists('content')) {
         return $result;
     }
 }
+if (!function_exists('convertDate')) {
+    function convertDate($date): string
+    {
+        if (!$date instanceof DateTime) {
+            $date = new DateTime($date);
+        }
+
+        $indonesianDate = $date->format('d F Y');
+        $indonesianDate = str_replace([
+            'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+        ], [
+            'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+        ], $indonesianDate);
+
+        return $indonesianDate;
+    }
+}
+
