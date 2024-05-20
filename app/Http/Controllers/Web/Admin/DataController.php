@@ -41,7 +41,7 @@ class DataController extends Controller
         return datatables()->of($data)
             ->addColumn('action', 'pages.admin.content.action')
             ->addColumn('last', function ($data) {
-                return $data->created_at->diffForHumans();
+                return $data->updated_at->diffForHumans();
             })
             ->editColumn('content', function ($data) {
                 return Str::limit($data->content, 20);
