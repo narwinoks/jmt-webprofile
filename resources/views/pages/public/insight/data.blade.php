@@ -35,7 +35,7 @@
                     </div>
                     <div class="entry-meta mb-1">
                         <ul>
-                            <li><i class="ti-calendar"></i> {{ $content->created_at->format('D M Y') }}</li>
+                            <li><i class="ti-calendar"></i> {{ $content->updated_at->format('D M Y') }}</li>
                         </ul>
                     </div>
                     <div class="entry-share clearfix">

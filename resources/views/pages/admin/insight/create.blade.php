@@ -26,6 +26,17 @@
                                     <div class="row">
                                         <div class="col-md-12 col-xl-12">
                                             <div class="mb-3">
+                                                <label class="form-label">Tanggal</label>
+                                                <input type="date" class="form-control" name="updated_at"
+                                                    placeholder="Masukan Tanggal Artikel">
+                                                <span class="error-updated_at text-danger d-none"></span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xl-12">
+                                            <div class="mb-3">
                                                 <label class="form-label">Masukan Body</label>
                                                 <textarea class="tinymce" name="content" rows="6" placeholder="Content.."></textarea>
                                                 <span class="error-content text-danger d-none"></span>

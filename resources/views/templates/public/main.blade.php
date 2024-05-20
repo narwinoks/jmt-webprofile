@@ -2,11 +2,11 @@
 
 <body>
     <!--=================================loading -->
-    <div id="loading">
+    {{-- <div id="loading">
         <div id="loading-center">
             <img src="{{ asset('assets/images/loading-jmt.gif') }}" alt="">
         </div>
-    </div>
+    </div> --}}
     @include('templates.public.menu')
     <!--=================================search and side menu content -->
     <div class="search-overlay"></div>

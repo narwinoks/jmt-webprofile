@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\AdminController;
 use App\Http\Controllers\Web\Admin\AuthController;
 use App\Http\Controllers\Web\Admin\ContactUsController;
 use App\Http\Controllers\Web\Admin\ContentController;
@@ -46,6 +47,14 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::post('/', 'store')->name("store");
         Route::delete('/', 'destroy')->name("destroy");
     });
+    Route::controller(AdminController::class)->middleware('auth')->group(function () {
+        Route::get('/career', 'career')->name('career');
+        Route::get('/show-modal', 'showModal')->name('showModal');
+        Route::get('/data-tables', 'dataTables')->name('dataTables');
+
+        Route::post('/save', 'saveContent')->name('save');
+        Route::delete('/delete', 'delete')->name("delete");
+    });
     Route::controller(InsightController::class)->middleware('auth')->prefix('insight/')->name('insight.')->group(function () {
         Route::get('/', 'index')->name("index");
         Route::get('create', 'create')->name("create");
@@ -90,7 +99,9 @@ Route::prefix('admin/')->name('admin.')->group(function () {
         Route::get('/content', 'content')->name("content");
     });
 });
-
+Route::controller(MainController::class)->name('main.')->group(function(){
+    Route::get('/data' , 'data')->name('data');
+});
 Route::get('/insight', [MainController::class, 'insight'])->name("insight");
 Route::get('/insight-data', [MainController::class, 'insightData'])->name("insightData");
 Route::get('/insight/{slug}', [MainController::class, 'detailInsight'])->name("detailInsight");

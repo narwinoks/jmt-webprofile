@@ -4,14 +4,19 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Content;
+use App\Models\Menu;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MainController extends Controller
 {
     public function show_page(Request $r)
     {
         $compact = [];
-
+        // return response()->json(['data' => Menu::where('status_enabled', true)
+        //     ->where('menu_id', null)
+        //     ->with('children')
+        //     ->get()]);
         switch ($r["pages"]) {
             case 'dashboard':
                 array_push($compact, 'r');
@@ -68,7 +73,7 @@ class MainController extends Controller
         $offset = $request->offset;
         $limit  = $request->limit;
 
-        $contents = Content::with('category')
+        $contents = Content::with('category', 'thumbnail')
             ->where('status_enabled', true)
             ->when($limit, function ($query) use ($limit) {
                 return $query->limit($limit);
@@ -79,10 +84,30 @@ class MainController extends Controller
             ->whereHas('category', function ($query) {
                 $query->where('category', '=', 'insight');
             })
+            ->orderBy('updated_at', 'DESC')
             ->get();
-        foreach ($contents as $content) {
-            $content->thumbnail = $content->getThumbnail()->url;
-        }
         return view('pages.public.insight.data', compact('contents'));
+    }
+    public function data(Request $request)
+    {
+        $key = $request->key;
+        switch ($key) {
+            case 'career':
+                return $this->getCareer($request);
+                break;
+            default:
+                return response()->json(['message' => $key ."   " ."is not a valid"] ,Response::HTTP_NOT_FOUND);
+            break;
+        }
+    }
+    protected function getCareer(Request $request){
+        $category = "Career";
+        $carers = Content::with('category')->where('status_enabled', true)
+            ->when($category, function ($query) use ($category) {
+                return $query->whereHas('category', function ($subquery) use ($category) {
+                    $subquery->where('category', $category);
+                });
+            })->get();
+        return view('pages.public.data.career' ,compact('carers'));
     }
 }

@@ -55,3 +55,7 @@ Breadcrumbs::for('admin.partner.index', function ($trail) {
     $trail->parent('admin.dashboard.index');
     $trail->push('Partner', route('admin.partner.index'));
 });
+Breadcrumbs::for('admin.career', function ($trail) {
+    $trail->parent('admin.dashboard.index');
+    $trail->push('Career', route('admin.career'));
+});

@@ -46,6 +46,9 @@ class ContentController extends Controller
                 $data['content'] = $request->content;
             }
             $data['slug'] = Str::slug($request->title, '-');
+            if ($request->updated_at) {
+                $data['updated_at'] = $request->updated_at;
+            }
             $data['content_category_id'] = ContentCategory::Where('category', $request->category)->first()->id ?? null;
             $content = Content::create($data);
             $type = $request->type;
@@ -131,6 +134,9 @@ class ContentController extends Controller
                     // $data['slug'] = Str::slug($request->title, '-');
                 }
                 $data['content_category_id'] = ContentCategory::Where('category', $request->category)->first()->id ?? null;
+                if ($request->updated_at) {
+                    $data['updated_at'] = $request->updated_at;
+                }
                 $content->update($data);
                 $type = $request->type;
                 $image = [];

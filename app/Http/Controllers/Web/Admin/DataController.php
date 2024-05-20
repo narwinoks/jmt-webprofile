@@ -35,6 +35,7 @@ class DataController extends Controller
                     $subquery->where('type', $type);
                 });
             })
+            ->orderBy('created_at','DESC')
             ->get();
 
         return datatables()->of($data)
