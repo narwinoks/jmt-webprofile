@@ -9,7 +9,7 @@
 
                 </div>
             </div>
-            <div id="loading-animation" class="col-md-12 d-flex justify-content-center" style="display: none">
+            <div id="loading-animation" class="col-md-12 justify-content-center"  style="display: none">
                 <img src="{{ asset('assets/images/loading.gif') }}" width="30px">
             </div>
         </div>
@@ -18,25 +18,25 @@
 @endsection
 @push('scripts')
     <script>
-        function loadMoreData() {
-            $('#content').empty()
+         function loadMoreData() {
+            $('#content').empty();
             $("#loading-animation").show();
             var key = 'career';
             $.ajax({
                 url: "{{ route('main.data') }}",
                 type: 'GET',
-                async: false,
-                data: {
-                    key: key
+                data: { key: key },
+                success: function(data) {
+                    setTimeout(function() {
+                        $("#loading-animation").hide();
+                        $('#content').append(data);
+                    }, 2000);
                 },
-            }).done(function(data) {
-                setTimeout(function() {
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("Error: " + textStatus, errorThrown);
                     $("#loading-animation").hide();
-                }, 2000)
-                $('#content').append(data);
-            }).fail(function(jqXHR, textStatus, errorThrown) {
-                console.error("Error: " + textStatus, errorThrown);
-            })
+                }
+            });
         }
         loadMoreData();
     </script>
