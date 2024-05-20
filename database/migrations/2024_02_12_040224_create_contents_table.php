@@ -20,6 +20,7 @@ class CreateContentsTable extends Migration
             $table->foreignIdFor(ContentCategory::class);
             $table->string('slug')->nullable();
             $table->integer('order')->nullable();
+            $table->date('date')->nullable();
             $table->string('subtitle');
             $table->longText('content')->nullable();
             $table->boolean('status_enabled')->default(true);

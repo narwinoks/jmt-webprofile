@@ -84,7 +84,7 @@ class MainController extends Controller
             ->whereHas('category', function ($query) {
                 $query->where('category', '=', 'insight');
             })
-            ->orderBy('updated_at', 'DESC')
+            ->orderBy('date', 'DESC')
             ->get();
         return view('pages.public.insight.data', compact('contents'));
     }

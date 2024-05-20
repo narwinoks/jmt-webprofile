@@ -29,9 +29,9 @@
                                         <div class="col-md-12 col-xl-12">
                                             <div class="mb-3">
                                                 <label class="form-label">Tanggal</label>
-                                                <input type="date" class="form-control" name="updated_at"
+                                                <input type="date" class="form-control" name="date"
                                                     placeholder="Masukan Tanggal Artikel" value="{{ date('Y-m-d', strtotime($insight->created_at)) }}">
-                                                <span class="error-updated_at text-danger d-none"></span>
+                                                <span class="error-date text-danger d-none"></span>
                                             </div>
                                         </div>
                                     </div>

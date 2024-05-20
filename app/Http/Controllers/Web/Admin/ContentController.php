@@ -46,8 +46,8 @@ class ContentController extends Controller
                 $data['content'] = $request->content;
             }
             $data['slug'] = Str::slug($request->title, '-');
-            if ($request->updated_at) {
-                $data['updated_at'] = $request->updated_at;
+            if ($request->date) {
+                $data['date'] = $request->date;
             }
             $data['content_category_id'] = ContentCategory::Where('category', $request->category)->first()->id ?? null;
             $content = Content::create($data);
@@ -134,8 +134,8 @@ class ContentController extends Controller
                     // $data['slug'] = Str::slug($request->title, '-');
                 }
                 $data['content_category_id'] = ContentCategory::Where('category', $request->category)->first()->id ?? null;
-                if ($request->updated_at) {
-                    $data['updated_at'] = $request->updated_at;
+                if ($request->date) {
+                    $data['date'] = $request->date;
                 }
                 $content->update($data);
                 $type = $request->type;
