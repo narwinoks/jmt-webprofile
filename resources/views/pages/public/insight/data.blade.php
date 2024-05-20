@@ -29,7 +29,7 @@
             <div class="blog-detail">
                 <div class="entry-title mb-1">
                     <h5><strong><a href="{{ route('detailInsight', ['slug' => $content->slug]) }}">
-                                {!! Str::limit($content->title, 40, ' ...') !!}
+                                {!! Str::limit($content->title, 25, ' ...') !!}
                             </a></strong></h5>
                 </div>
                 <div class="entry-meta mb-1">

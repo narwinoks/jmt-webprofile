@@ -30,7 +30,7 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Tanggal</label>
                                                 <input type="date" class="form-control" name="date"
-                                                    placeholder="Masukan Tanggal Artikel" value="{{ date('Y-m-d', strtotime($insight->created_at)) }}">
+                                                    placeholder="Masukan Tanggal Artikel" value="{{ date('Y-m-d', strtotime($insight->date)) }}">
                                                 <span class="error-date text-danger d-none"></span>
                                             </div>
                                         </div>
