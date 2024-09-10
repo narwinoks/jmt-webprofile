@@ -44,7 +44,7 @@
                                 })
                                 ->get();
                         @endphp
-                        <h5 class="mb-2">Partner</h5>
+                        <h5 class="mb-2">Client</h5>
                         <div class="owl-carousel" data-items="5" data-lg-items="4" data-md-items="3" data-sm-items="2"
                             data-space="0" data-loop="true">
                             @foreach ($partners as $key => $partner)
